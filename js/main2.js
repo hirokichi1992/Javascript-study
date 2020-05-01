@@ -44,9 +44,19 @@
     // console.log(y);
 
     // foreach:要素をひとつづつ取り出す
-    scores.forEach((score, index) => {
-        console.log(`Score${index} :${score}`);
-    })
+    // scores.forEach((score, index) => {
+    //     console.log(`Score${index} :${score}`);
+    // })
+
+    // map：配列要素に何らかの処理をする
+    // const updateScores = scores.map((score) => {
+    //     return score * 2;
+    // })
+    // 上の省略系
+    const updateScores = scores.map(score => score * 2);
+
+    console.log(updateScores);
+
 
 
     // console.log(sum(...otherScores));
