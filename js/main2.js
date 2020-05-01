@@ -32,17 +32,21 @@
     // console.log(c);
 
     // レスト構文：...othersにはscoresの残りの配列が格納される
-    const [a, ...others] = scores;
-    console.log(a);
-    console.log(others);
+    // const [a, ...others] = scores;
+    // console.log(a);
+    // console.log(others);
 
     // 値の交換
-    let x = 80;
-    let y = 70;
-    [x, y] = [y, x];
-    console.log(x);
-    console.log(y);
+    // let x = 80;
+    // let y = 70;
+    // [x, y] = [y, x];
+    // console.log(x);
+    // console.log(y);
 
+    // foreach:要素をひとつづつ取り出す
+    scores.forEach((score, index) => {
+        console.log(`Score${index} :${score}`);
+    })
 
 
     // console.log(sum(...otherScores));
