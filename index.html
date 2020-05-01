@@ -8,9 +8,9 @@
 </head>
 
 <body>
-    <script src="js/main.js"></script>
-    <!-- ????????????????{}??????????????-->
-    <script>
+    <!-- <script src="js/main.js"></script> -->
+    <!-- 複数スクリプトを読み込む場合は、{}で区切ることでスコープを分ける-->
+    <!-- <script>
         'use strict'; {
             const x = 1000;
 
@@ -18,10 +18,11 @@
                 const x = 100;
                 return x;
             }
-            console.log(test()); // ????
-            console.log(x); // ?????
+            console.log(test()); // ローカルスコープ
+            console.log(x); // グローバルスコープ
         }
-    </script>
+	</script> -->
+    <script src="js/main2.js"></script>
 </body>
 
 </html>
