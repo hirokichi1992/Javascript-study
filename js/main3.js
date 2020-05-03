@@ -28,8 +28,21 @@
     // delete point.x;
     // console.log(point);
 
-    console.log(point);
-    console.log(x);
-    console.log(r);
-    console.log(others);
+    // Object.Keys:オブジェクトの要素を配列として取得する→オブジェクトに対してforEachは使えないので一旦配列として取得する
+    // const keys = Object.keys(point);
+    // console.log(keys);
+
+    // foreach:要素をひとつづつ取り出す
+    // keys.forEach(key => {
+    //     console.log(`Key: ${key}, Value: ${point[key]}`)
+    // })
+
+    const points = [
+        { x: 10, y: 30, },
+        { x: 20, y: 60, },
+        { x: 30, y: 120, },
+    ];
+
+    // 配列内のオブジェクトへのアクセス方法
+    console.log(points[1].y);
 }
