@@ -3,7 +3,7 @@
     // const otherScores = [10, 50, 10];
     // const scores = [90, 80, 100, ...otherScores];
 
-    const scores = [90, 80, 100];
+    // const scores = [90, 80, 100];
     // console.log(scores[0]);
 
     // constで定義した配列でも配列内要素に対しての変更は可能
@@ -53,13 +53,29 @@
     //     return score * 2;
     // })
     // 上の省略系
-    const updateScores = scores.map(score => score * 2);
+    // const updateScores = scores.map(score => score * 2);
 
-    console.log(updateScores);
+    // console.log(updateScores);
 
 
 
     // console.log(sum(...otherScores));
+
+    // filter→偶数だけ取り出す
+    const scores = [1, 3, 5, 5, 6, 8, 10];
+
+    // const evenNumbers = scores.filter(scores => {
+    //     if (scores % 2 === 0) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    // });
+
+    // 上の省略版
+    const evenNumbers = scores.filter(scores => scores % 2 === 0);
+
+    console.log(evenNumbers);
 
     // 配列の要素数は'length'で取得→配列の増減に対応できる
     for (let i = 0; i < scores.length; i++) {
