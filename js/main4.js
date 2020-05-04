@@ -71,6 +71,7 @@
     // 乱数生成
     console.log(Math.random());
 
-
+    // サイコロの目実装（1~6）
+    console.log(Math.floor(Math.random() * 6) + 1);
 
 }
