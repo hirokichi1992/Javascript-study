@@ -16,13 +16,39 @@
         }
 
         // 静的メソッド→クラスから直接呼び出し可
-        static showInfo() {
-            console.log('静的メソッド内ではthisは使えない。理由はインスタンスからの呼び出しではない為。constructorで使用しているthisはインスタンス化されたオブジェクトのこと。');
-        }
+        // static showInfo() {
+        //     console.log('静的メソッド内ではthisは使えない。理由はインスタンスからの呼び出しではない為。constructorで使用しているthisはインスタンス化されたオブジェクトのこと。');
+        // }
     }
+
+    class SponsoredPost {
+        constructor(sponsor, text) {
+            this.sponsor = sponsor,
+                this.text = text,
+                this.likeCount = 0
+        }
+
+        show() {
+            console.log(`Name: ${this.name} post: ${this.text} ${this.likeCount}いいね`);
+            console.log(`sponsored by ${this.sponsor}`);
+        }
+
+        like() {
+            this.likeCount++;
+            this.show();
+        }
+
+        // 静的メソッド→クラスから直接呼び出し可
+        // static showInfo() {
+        //     console.log('静的メソッド内ではthisは使えない。理由はインスタンスからの呼び出しではない為。constructorで使用しているthisはインスタンス化されたオブジェクトのこと。');
+        // }
+    }
+
+    // インスタンス化
     const posts = [
         new Post('aso', '今日も日本の財政を良くするぞ'),
         new Post('kono', '今日も日本の外交を良くするぞ'),
+        new SponsoredPost('ひめりん', '今日も元気に姫路城'),
     ]
 
     // show(posts[0]); // Name: ジャスミン post: Javascriptのお勉強中 0いいね
@@ -40,9 +66,13 @@
 
 
     // 追加メソッド呼び出し
-    posts[0].like();
+    // posts[0].like();
 
 
     // 静的メソッドの呼び出し
-    Post.showInfo();
+    // Post.showInfo();
+
+
+    posts[2].show();
+    posts[2].like();
 }
