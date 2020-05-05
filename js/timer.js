@@ -19,7 +19,7 @@
     //     }
     // }
 
-    // setInterval(): showTime関数を1000ms毎に繰り返す
+    // setInterval(): showTime関数を1000ms毎に繰り返す → 呼び出した処理が終わっていなくても実行される
     // const IntervalId = setInterval(showTime, 1000);
 
 
@@ -32,7 +32,7 @@
     // setTimeout(showTime, 1000);
 
 
-    // setTimeoutを使った繰り返し処理方法
+    // setTimeoutを使った繰り返し処理方法 → 呼び出した処理が終わってから実行される
     function showTime() {
         console.log(new Date);
         // 1s後にshowTime()を実行
@@ -45,5 +45,17 @@
         }
     }
 
-    showTime();
+    // showTime();
+
+
+    // 例外処理（toUpperCaseに数値が指定されていた場合）
+    const name = 33;
+
+    try {
+        console.log(name.toUpperCase());
+    } catch (e) {
+        console.log(e); // TypeError: name.toUpperCase is not a function at timer.js:55
+    } finally {
+        console.log('最後に必ず実行されます');
+    }
 }
