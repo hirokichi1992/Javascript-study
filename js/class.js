@@ -1,4 +1,6 @@
 'use strict'; {
+
+    // 親クラス
     class Post {
         constructor(name, text) {
             this.name = name,
@@ -21,27 +23,23 @@
         // }
     }
 
-    class SponsoredPost {
+    // 子クラス
+    class SponsoredPost extends Post {
         constructor(sponsor, text) {
-            this.sponsor = sponsor,
-                this.text = text,
-                this.likeCount = 0
+            // this キーワードを使うには constructor() の最初で super() とする必要がある。→ 親クラスのコンストラクターが呼ばれる
+            super(text);
+            this.sponsor = sponsor
         }
 
         show() {
-            console.log(`Name: ${this.name} post: ${this.text} ${this.likeCount}いいね`);
-            console.log(`sponsored by ${this.sponsor}`);
-        }
-
-        like() {
-            this.likeCount++;
-            this.show();
-        }
-
-        // 静的メソッド→クラスから直接呼び出し可
-        // static showInfo() {
-        //     console.log('静的メソッド内ではthisは使えない。理由はインスタンスからの呼び出しではない為。constructorで使用しているthisはインスタンス化されたオブジェクトのこと。');
-        // }
+                // superに繋げて書けば親クラスのメソッド(show)を呼べる
+                super.show();
+                console.log(`sponsored by ${this.sponsor}`);
+            }
+            // 静的メソッド→クラスから直接呼び出し可
+            // static showInfo() {
+            //     console.log('静的メソッド内ではthisは使えない。理由はインスタンスからの呼び出しではない為。constructorで使用しているthisはインスタンス化されたオブジェクトのこと。');
+            // }
     }
 
     // インスタンス化
@@ -73,6 +71,12 @@
     // Post.showInfo();
 
 
-    posts[2].show();
-    posts[2].like();
+    //　呼び出し
+    // posts.forEach((post) => {
+    //     post.like();
+    // })
+
+    // 上記の省略系
+    posts.forEach((post) => post.like())
+
 }
