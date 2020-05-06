@@ -3,8 +3,13 @@
     //     // document.querySelector('h1').textContent = 'changed word';
     //     // document.querySelector('#target').textContent = 'changed word';
     //     // document.getElementById('target').textContent = 'changed word';
-    //     // document.querySelector('p').textContent = 'changed word'; // 1番目しか変更されない
-    //     // document.querySelectorAll('p')[2].textContent = 'changed word'; // 全て取得可能→配列のようにアクセス可能
+
+    // 　 　// p用をの1番目しか変更されない
+    //     // document.querySelector('p').textContent = 'changed word';
+
+    //     // 全て取得可能→配列のようにアクセス可能
+    //     // document.querySelectorAll('p')[2].textContent = 'changed word';
+
     //     // forEachで全取得したp要素のテキストを順番に変更する
     //     document.querySelectorAll('p').forEach((p, num) => {
     //         p.textContent = `${num}番目のp要素です`;
@@ -14,12 +19,27 @@
 
     // ボタンを押したら何らかの処理を実行する
     document.querySelector('button').addEventListener('click', () => {
+        // 操作したいノードを取得
         const targetNode = document.getElementById('target');
 
-        targetNode.textContent = 'changed word'; // textの変更
-        targetNode.title = 'this is changed title from javascript'; // titleの変更
-        targetNode.style.color = "red"; // css colorの変更（非推奨-CSSとの役割が曖昧になるのでクラスのつけ外しによって制御する方法が推奨）
-        targetNode.style.background = "blue"; // css backgroundの変更（非推奨-CSSとの役割が曖昧になるのでクラスのつけ外しによって制御する方法が推奨）
+        // textの変更
+        targetNode.textContent = 'changed word';
+
+        // titleの変更
+        //targetNode.title = 'this is changed title from javascript';
+
+        // css colorの変更（非推奨-CSSとの役割が曖昧になるのでクラスのつけ外しによって制御する方法が推奨）
+        // targetNode.style.color = "red";
+
+        // css backgroundの変更（非推奨-CSSとの役割が曖昧になるのでクラスのつけ外しによって制御する方法が推奨）
+        // targetNode.style.background = "blue";
+
+        // 元から指定ノードにクラスがついている場合、元のクラスは消えてしまう
+        // targetNode.className = "mycolor";
+
+        // 元から付加されているクラスを消さないためには、両方指定する必要がある
+        targetNode.className = "mycolor myborder";
+
     })
 
 }
