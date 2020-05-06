@@ -34,11 +34,13 @@
         // css backgroundの変更（非推奨-CSSとの役割が曖昧になるのでクラスのつけ外しによって制御する方法が推奨）
         // targetNode.style.background = "blue";
 
+
         // 元から指定ノードにクラスがついている場合、元のクラスは消えてしまう
         // targetNode.className = "mycolor";
 
         // 元から付加されているクラスを消さないためには、両方指定する必要がある
         // targetNode.className = "mycolor myborder";
+
 
         // classList.addを使ってクラスを追加する
         // targetNode.classList.add("mycolor");
@@ -55,8 +57,24 @@
         // classList.toggleを使ってクラスのつけ外しを実行する
         // targetNode.classList.toggle('mycolor');
 
+
         // カスタムデータ属性（data-translation）で指定した値に置き換える → targetNode.dataset.translationと取り出すところに注意
-        targetNode.textContent = targetNode.dataset.translation;
+        // targetNode.textContent = targetNode.dataset.translation;
+
+
+        // li要素を追加する
+
+        // createElementで要素を作成
+        const item2 = document.createElement('li');
+
+        // 作成した要素のテキストを設定
+        item2.textContent = 'item2';
+
+        // 追加したい親要素ulを取得
+        const ul = document.querySelector('ul');
+
+        // ul要素の末尾に追加したい要素item2を追加する
+        ul.appendChild(item2);
 
     })
 
