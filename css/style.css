@@ -6,3 +6,11 @@
 .myborder {
     border-bottom: 4px solid orange;
 }
+
+li {
+    cursor: pointer;
+}
+
+.done {
+    text-decoration: line-through;
+}
