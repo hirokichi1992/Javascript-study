@@ -95,15 +95,41 @@
         // ul.insertBefore(copy, item2);
 
 
-        // 要素を削除する
-        const item1 = document.querySelectorAll('li')[1];
+        // // 要素を削除する
 
-        // IEでは非対応
-        // item1.remove();
+        // // 削除するli要素を取得
+        // const item1 = document.querySelectorAll('li')[1];
 
-        // 代わりにこっちを使う
-        // 親ノード.removeChild('削除するノード');
-        document.querySelector('ul').removeChild(item1);
+        // // IEでは非対応
+        // // item1.remove();
+
+        // // 代わりにこっちを使う
+        // // 親ノード.removeChild('削除するノード');
+        // document.querySelector('ul').removeChild(item1);
+
+
+        // input入力された値をli要素に追加する
+
+        // liを作成
+        const li = document.createElement('li');
+
+        // input要素を取得
+        const input = document.querySelector('input');
+
+        // input要素のテキストを入力値に設定
+        li.textContent = input.value;
+
+        // 親ノードを取得
+        const ul = document.querySelector('ul');
+
+        // li要素をul要素の最後に追加
+        ul.appendChild(li);
+
+        // input要素の入力値を消す
+        input.value = '';
+
+        // inputm要素にFocusさせる
+        input.focus();
     })
 
 }
