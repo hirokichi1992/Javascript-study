@@ -108,28 +108,36 @@
         // document.querySelector('ul').removeChild(item1);
 
 
-        // input入力された値をli要素に追加する
+        // // input入力された値をli要素に追加する
 
-        // liを作成
+        // // liを作成
+        // const li = document.createElement('li');
+
+        // // input要素を取得
+        // const input = document.querySelector('input');
+
+        // // input要素のテキストを入力値に設定
+        // li.textContent = input.value;
+
+        // // 親ノードを取得
+        // const ul = document.querySelector('ul');
+
+        // // li要素をul要素の最後に追加
+        // ul.appendChild(li);
+
+        // // input要素の入力値を消す
+        // input.value = '';
+
+        // // inputm要素にFocusさせる
+        // input.focus();
+
+
+        // select要素で選択した要素をul要素内にli要素として追加
         const li = document.createElement('li');
+        const select = document.querySelector('select');
+        li.textContent = `${select.value}`;
 
-        // input要素を取得
-        const input = document.querySelector('input');
-
-        // input要素のテキストを入力値に設定
-        li.textContent = input.value;
-
-        // 親ノードを取得
-        const ul = document.querySelector('ul');
-
-        // li要素をul要素の最後に追加
-        ul.appendChild(li);
-
-        // input要素の入力値を消す
-        input.value = '';
-
-        // inputm要素にFocusさせる
-        input.focus();
+        document.querySelector('ul').appendChild(li);
     })
 
 }
