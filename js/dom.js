@@ -133,10 +133,26 @@
 
 
         // select要素で選択した要素をul要素内にli要素として追加
-        const li = document.createElement('li');
-        const select = document.querySelector('select');
-        li.textContent = `${select.value}`;
+        // const li = document.createElement('li');
+        // const select = document.querySelector('select');
+        // li.textContent = `${select.value}`;
 
+        // document.querySelector('ul').appendChild(li);
+
+
+        // ラジオボタンで選択した要素をul要素内にli要素として追加
+        const colors = document.querySelectorAll('input');
+        let selectedColor;
+
+        // ラジオボタンがチェックされている場合に変数にラジオボタンのvalueを代入する
+        colors.forEach((color => {
+            if (color.checked === true) {
+                selectedColor = color.value;
+            }
+        }));
+
+        const li = document.createElement('li');
+        li.textContent = selectedColor;
         document.querySelector('ul').appendChild(li);
     })
 
