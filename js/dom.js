@@ -62,20 +62,28 @@
         // targetNode.textContent = targetNode.dataset.translation;
 
 
-        // li要素を追加する
+        // // li要素を新規追加する
 
-        // createElementで要素を作成
-        const item2 = document.createElement('li');
+        // // createElementで要素を作成
+        // const item2 = document.createElement('li');
 
-        // 作成した要素のテキストを設定
-        item2.textContent = 'item2';
+        // // 作成した要素のテキストを設定
+        // item2.textContent = 'item2';
 
-        // 追加したい親要素ulを取得
+        // // 追加したい親要素ulを取得
+        // const ul = document.querySelector('ul');
+
+        // // ul要素の末尾に追加したい要素item2を追加する
+        // ul.appendChild(item2);
+
+
+        // 既に存在している要素を複製、挿入する
+        const item0 = document.querySelectorAll('li')[0];
+        const copy = item0.cloneNode(true);
+
         const ul = document.querySelector('ul');
-
-        // ul要素の末尾に追加したい要素item2を追加する
-        ul.appendChild(item2);
-
+        const item2 = document.querySelectorAll('li')[2];
+        ul.insertBefore(copy, item2);
     })
 
 }
