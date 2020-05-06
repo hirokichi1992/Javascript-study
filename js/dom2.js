@@ -10,9 +10,9 @@
     // })
 
     // ドキュメント上でマウスを動かすとコンソールへXY座標表示
-    document.addEventListener('mousemove', e => {
-        console.log(`X座標：${e.clientX}　Y座標：${e.clientY}`);
-    })
+    // document.addEventListener('mousemove', e => {
+    //     console.log(`X座標：${e.clientX}　Y座標：${e.clientY}`);
+    // })
 
     // ドキュメント上でキーボードを押すとコンソールへキー表示
     document.addEventListener('keydown', e => {
@@ -42,5 +42,14 @@
     text.addEventListener('change', () => {
         console.log('テキストエリアへの入力が確定しました！');
     });
+
+
+    // フォームを送信したときのイベント
+    const form = document.querySelector('form');
+    form.addEventListener('submit', e => {
+        // form送信後のページ遷移をキャンセルする
+        e.preventDefault();
+        console.log('submitされました！');
+    })
 
 }
