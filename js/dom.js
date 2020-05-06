@@ -78,11 +78,20 @@
 
 
         // 既に存在している要素を複製、挿入する
+
+        // コピーするアイテムを取得
         const item0 = document.querySelectorAll('li')[0];
+
+        // item0をコピーしてcopyに代入
         const copy = item0.cloneNode(true);
 
+        // コピー先の親ノードを取得
         const ul = document.querySelector('ul');
+
+        // コピーしたい場所の後ろの要素を取得
         const item2 = document.querySelectorAll('li')[2];
+
+        // ul要素内のitem2の前にcopy要素を追加する
         ul.insertBefore(copy, item2);
     })
 
