@@ -23,7 +23,7 @@
         const targetNode = document.getElementById('target');
 
         // textの変更
-        targetNode.textContent = 'changed word';
+        // targetNode.textContent = 'changed word';
 
         // titleの変更
         //targetNode.title = 'this is changed title from javascript';
@@ -38,7 +38,25 @@
         // targetNode.className = "mycolor";
 
         // 元から付加されているクラスを消さないためには、両方指定する必要がある
-        targetNode.className = "mycolor myborder";
+        // targetNode.className = "mycolor myborder";
+
+        // classList.addを使ってクラスを追加する
+        // targetNode.classList.add("mycolor");
+
+        // classList.containを使ってクラスが含まれているか確認する→条件分岐に使う
+        // if (targetNode.classList.contains('mycolor') === true) {
+        // classList.removeでクラスを外す
+        //     targetNode.classList.remove('mycolor');
+        // } else {
+        //　classList.addでクラスを追加する
+        //     targetNode.classList.add('mycolor');
+        // }
+
+        // classList.toggleを使ってクラスのつけ外しを実行する
+        // targetNode.classList.toggle('mycolor');
+
+        // カスタムデータ属性（data-translation）で指定した値に置き換える → targetNode.dataset.translationと取り出すところに注意
+        targetNode.textContent = targetNode.dataset.translation;
 
     })
 
