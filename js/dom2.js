@@ -18,4 +18,29 @@
     document.addEventListener('keydown', e => {
         console.log(e.key);
     })
+
+
+    // テキストエリアの値を取得
+    const text = document.querySelector('textarea');
+
+    // フォーカスを当てた時
+    text.addEventListener('focus', () => {
+        console.log('テキストエリアをフォーカスしました！');
+    });
+
+    // フォーカスを外した時
+    text.addEventListener('blur', () => {
+        console.log('テキストエリアからフォーカスを外しました！');
+    });
+
+    // 入力した時
+    text.addEventListener('input', () => {
+        console.log('テキストエリアに入力しました！');
+    });
+
+    // 入力が確定した時（フォーカスが外れた時）
+    text.addEventListener('change', () => {
+        console.log('テキストエリアへの入力が確定しました！');
+    });
+
 }
